@@ -1,0 +1,11 @@
+__pycache__
+.vscode
+*.png
+*.jpg
+*.ttf
+*.mp4
+
+!badapple.png
+!badapple_m_1.png
+!small_cat.jpg
+!small_cat_m_1.jpg
