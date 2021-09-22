@@ -5,15 +5,17 @@ from multiprocessing import Process
 
 
 thread_count = 8
-start_num = 1080
+start_num = 0
 
 input_dir = "./video_dump/"
 output_dir = "./ascii_dump/"
 
-scale = 1/2
-glyphs = extract_fonts()
+scale = 1
+(glyphs, codes) = extract_fonts()
 
 files = natsorted(os.listdir(input_dir))
+
+files.remove(".gitignore")
 
 file_count = len(files)
 
@@ -25,7 +27,7 @@ def main(thread_id):
         input_path = input_dir + filename
         output_path = output_dir + os.path.splitext(filename)[0] + ".png"
         image_tiles = image_to_tiles(input_path, scale)
-        create_ascii_image(glyphs, image_tiles, output_path)
+        create_ascii_image(glyphs, codes, image_tiles, output_path)
 
         counter += thread_count
 

@@ -4,6 +4,7 @@ __pycache__
 *.jpg
 *.ttf
 *.mp4
+*.mp3
 
 !badapple.png
 !badapple_m_1.png
